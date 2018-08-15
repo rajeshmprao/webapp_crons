@@ -1,0 +1,15 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+pymysql = "*"
+pandas = "*"
+requests = "*"
+webapp_db = {git = "https://github.com/rajeshmprao/webapp_db.git", editable = true, ref = "master"}
+
+[dev-packages]
+
+[requires]
+python_version = "3.6"

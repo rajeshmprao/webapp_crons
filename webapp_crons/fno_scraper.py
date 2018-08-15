@@ -39,7 +39,7 @@ def fno_scraper(datetime_object):
             print("FNO Bhavcopy does not exist for " +
                   (datetime_object.strftime("%d-%b-%Y")))
     except Exception as e:
-        # raise
+        raise
         print(e)
     return
 
@@ -115,6 +115,8 @@ def process_fno_bhav(zipfile, fno_symbol_dict, date, cursor):
     futures_eod_data(cursor, futures_to_insert)
     options_eod_data(cursor, options_to_insert)
     os.remove(zipfile)
+    futures_to_insert.clear()
+    options_to_insert.clear()
 
 
 
